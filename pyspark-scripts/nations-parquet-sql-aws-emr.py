@@ -1,3 +1,5 @@
+%pyspark
+
 """
 File name: nations-parquet-sql.py
 Author: Jonathan Dawson
@@ -5,10 +7,12 @@ Date Created: 6/8/2016
 Date Modified: 6/8/2016
 Python Version: 2.7
 PySpark Version: 1.6.1
-"""
 
-# todo: Uncomment the below in Zeppelin notebook (http://zeppelin.incubator.apache.org/docs/latest/index.html)
-# % pyspark
+Example of loading .parquet formatted files into a in-memory SQLContext table and running SQL queries against it.
+
+This script is configured to run on the AWS EMR Spark service inside a Zeppelin notebook and pull a parquet file from
+AWS s3.
+"""
 
 import sys
 
