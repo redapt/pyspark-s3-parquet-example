@@ -1,6 +1,6 @@
 # pyspark-s3-parquet-example
 This repository demonstrates some of the mechanics necessary to load a sample [Parquet](https://parquet.apache.org/) formatted file from an AWS S3 Bucket.
-A python job will then be submitted to a local [Apache Spark](http://spark.apache.org/) instance which will run a SQLContext to create a temporary and load the Parquet file contents into a DataFrame.
+A python job will then be submitted to a local [Apache Spark](http://spark.apache.org/) instance which will run a SQLContext to create a temporary table and load the Parquet file contents into a DataFrame.
 SQL queries will then be possible against the in-memory temporary table.  SparkSQL has a lot to explore and this repo will serve as cool place to check things out.
 
 The sample Parquet file was pulled from the [following repository](https://github.com/jcrobak/parquet-python/).  Thanks a bunch!
