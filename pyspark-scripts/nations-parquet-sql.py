@@ -14,6 +14,7 @@ import sys
 
 LINE_LENGTH = 200
 
+
 def print_horizontal():
     """
     Simple method to print horizontal line
