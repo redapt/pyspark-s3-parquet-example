@@ -1,3 +1,6 @@
+# Uncomment the below line to run in AWS EMR using Zepplin (http://zeppelin.incubator.apache.org/docs/latest/index.html)
+# % pyspark
+
 import sys
 
 LINE_LENGTH = 200
