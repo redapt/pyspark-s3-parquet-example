@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Pyspark-s3-parquet-example by redapt</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Pyspark-s3-parquet-example</h1>
+        <p class="header">This repo demonstrates how to load a sample Parquet formatted file from an AWS S3 Bucket.  A python job will then be submitted to a local Apache Spark instance which will run a SQLContext to create a temporary table using a DataFrame.  SQL queries will then be possible against the temporary table.</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/redapt/pyspark-s3-parquet-example/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/redapt/pyspark-s3-parquet-example/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/redapt/pyspark-s3-parquet-example">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/redapt">redapt</a></p>
+
+
+      </header>
+      <section>
+        <h1>
+<a id="pyspark-s3-parquet-example" class="anchor" href="#pyspark-s3-parquet-example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>pyspark-s3-parquet-example</h1>
+
+<p>This repository demonstrates some of the mechanics necessary to load a sample <a href="https://parquet.apache.org/">Parquet</a> formatted file from an AWS S3 Bucket.
+A python job will then be submitted to a local <a href="http://spark.apache.org/">Apache Spark</a> instance which will run a SQLContext to create a temporary and load the Parquet file contents into a DataFrame.
+SQL queries will then be possible against the in-memory temporary table.  SparkSQL has a lot to explore and this repo will serve as cool place to check things out.</p>
+
+<p>The sample Parquet file was pulled from the <a href="https://github.com/jcrobak/parquet-python/">following repository</a>.  Thanks a bunch!</p>
+
+<h2>
+<a id="running-the-examples" class="anchor" href="#running-the-examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Running the Examples</h2>
+
+<h3>
+<a id="aws-emr-using-a-zeppelin-notebook" class="anchor" href="#aws-emr-using-a-zeppelin-notebook" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>AWS EMR using A Zeppelin Notebook</h3>
+
+<p>The <a href="./pyspark-scripts/nations-parquet-sql-aws-emr.py">following script</a> can be copied and pasted inside a Zeppelin notebook running in AWS EMR.</p>
+
+<h4>
+<a id="prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Prerequisites</h4>
+
+<ol>
+<li>AWS Account created</li>
+<li>EMR Cluster Configured with Spark 1.6.1 and <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/ReleaseGuide/emr-sandbox.html#emr-zeppelin">Apache Zeppelin</a>
+</li>
+<li>Copy the <a href="./test-data/nation.plain.parquet">parquet file</a> to a s3 bucket in your AWS account.</li>
+</ol>
+
+<h4>
+<a id="steps" class="anchor" href="#steps" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Steps</h4>
+
+<ol>
+<li>Configure the <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/ReleaseGuide/emr-sandbox.html#emr-zeppelin">Spark Interpreter</a> in Zeppelin.</li>
+<li>Copy the <a href="./pyspark-scripts/nations-parquet-sql-aws-emr.py">script</a> into a new Zeppelin Notebook.</li>
+<li>Run the script with the "arrow button".</li>
+<li>Profit and play around with PySpark in the safety of the Zeppelin notebook.</li>
+</ol>
+
+<h4>
+<a id="sample-output" class="anchor" href="#sample-output" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample Output</h4>
+
+<p>The <a href="./sample-output/jon-sample-output.png">following output</a> is from one of my sample runs ...</p>
+
+<h3>
+<a id="run-against-local-instance-of-spark" class="anchor" href="#run-against-local-instance-of-spark" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Run against local instance of Spark</h3>
+
+<p>The <a href="./pyspark-scripts/nations-parquet-sql-local.py">following-script</a> as been configured to run against a local instance of spark.  The location of the Parquet file is also being 
+served locally rather than from s3.  Other than that the script is doing the same as the AWS script and the output will be the same.</p>
+
+<h4>
+<a id="prerequisites-1" class="anchor" href="#prerequisites-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Prerequisites</h4>
+
+<ol>
+<li>
+<a href="http://spark.apache.org/downloads.html">Apache Spark 1.6.1</a> installed locally.</li>
+<li><a href="https://www.python.org/downloads/release/python-2711/">Python 2.7.11</a></li>
+</ol>
+
+<h4>
+<a id="steps-1" class="anchor" href="#steps-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Steps</h4>
+
+<ol>
+<li>From root cd into pyspark-scripts</li>
+<li>Run the following
+python nations-parquet-sql-local.py</li>
+<li>Once again profit and play around.</li>
+</ol>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
