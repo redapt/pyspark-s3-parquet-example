@@ -1,15 +1,26 @@
-# Uncomment the below line to run in AWS EMR using Zepplin (http://zeppelin.incubator.apache.org/docs/latest/index.html)
+"""
+File name: nations-parquet-sql.py
+Author: Jonathan Dawson
+Date Created: 6/8/2016
+Date Modified: 6/8/2016
+Python Version: 2.7
+PySpark Version: 1.6.1
+"""
+
+# todo: Uncomment the below in Zeppelin notebook (http://zeppelin.incubator.apache.org/docs/latest/index.html)
 # % pyspark
 
 import sys
 
 LINE_LENGTH = 200
 
-
 def print_horizontal():
+    """
+    Simple method to print horizontal line
+    :return: None
+    """
     for i in range(LINE_LENGTH):
         sys.stdout.write('-')
-
     print("")
 
 
