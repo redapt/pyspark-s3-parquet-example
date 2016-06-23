@@ -14,8 +14,9 @@ The [following script](./pyspark-scripts/nations-parquet-sql-aws-emr.py) can be 
 #### Prerequisites
 
 1. AWS Account created
-2. EMR Cluster Configured with Spark 1.6.1 and [Apache Zeppelin](http://docs.aws.amazon.com/ElasticMapReduce/latest/ReleaseGuide/emr-sandbox.html#emr-zeppelin)
-3. Copy the [parquet file](./test-data/nation.plain.parquet) to a s3 bucket in your AWS account.
+2. AWS ACCESS key and SECRET ACCESS KEY stored in ~/.aws/credentials file
+3. EMR Cluster Configured with Spark 1.6.1 and [Apache Zeppelin](http://docs.aws.amazon.com/ElasticMapReduce/latest/ReleaseGuide/emr-sandbox.html#emr-zeppelin)
+4. Copy the [parquet file](./test-data/nation.plain.parquet) to a s3 bucket in your AWS account.
 
 #### Steps
 
